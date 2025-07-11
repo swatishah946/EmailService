@@ -6,15 +6,13 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest"
+    "test": "node --test"
   },
   "author": "Swati Shah",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "jest": "^30.0.4"
   }
+ 
 }

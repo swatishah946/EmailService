@@ -10,7 +10,7 @@
 export async function retryWithExponentialBackoff(func,retries=3,delay=1000){
 for(let attempts=0;attempts<retries;attempts++){
     try {
-      return await fn();
+      return await func();
     } catch (err) {
       if (attempts === retries - 1) {
         throw err;

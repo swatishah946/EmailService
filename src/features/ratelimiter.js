@@ -1,26 +1,19 @@
-const timestamps=[];
-/*
-parameters-
- * {number} limit - Max allowed requests in time window
- * {number} interval - Time window in ms (default 1 min)
- * return {boolean} - True if allowed, false if rate limit exceeded
-*/
 
-export async function LimitCheck(limit=7,interval=60000) {
-    const currenttime=Date.now();
-    let windowstart=currenttime-interval;
 
-    // Remove  older timestamps
-  while (timestamps.length && timestamps[0] < windowstart) {
+const timestamps = [];
+
+export function LimitCheck(limit = 10, windowMs = 60000) {
+  const now = Date.now();
+
+  // Remove timestamps older than 1 minute
+  while (timestamps.length > 0 && now - timestamps[0] > windowMs) {
     timestamps.shift();
   }
 
-  if (timestamps.length >= limit) {
-    return false; //limit exceeded
+  if (timestamps.length < limit) {
+    timestamps.push(now);
+    return true;
   }
 
-  // Record current request timestamp
-  timestamps.push(currenttime);
-  return true;
-
+  return false;
 }
