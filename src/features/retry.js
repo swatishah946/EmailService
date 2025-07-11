@@ -7,7 +7,7 @@
  *  {number} delay - Initial delay in ms (will double each retry).
  */
 
-async function retryWithExponentialBackoff(func,retries=3,delay=1000){
+export async function retryWithExponentialBackoff(func,retries=3,delay=1000){
 for(let attempts=0;attempts<retries;attempts++){
     try {
       return await fn();
@@ -22,4 +22,3 @@ for(let attempts=0;attempts<retries;attempts++){
 }
 
 }
-export default retryWithExponentialBackoff;
