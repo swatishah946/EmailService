@@ -79,23 +79,21 @@ Sends an email using mock providers with retry, fallback, and queue logic.
     url: https://emailservice-nreh.onrender.com/send-email
     body:
       mode: raw
-      raw
-      json: |
-      ```  {
+      json: | {
           "to": "swati@example.com",
           "subject": "Testing Retry",
           "body": "Fallback check",
           "idempotencyKey": "demo-email-2025"
         }
-```
+
 📤 Sample Response
-```
+
 {
   "status": "QUEUED",
   "message": "Email job accepted and will be processed shortly.",
   "track": "/status/demo-email-2025"
 }
-```
+
 📊 GET /status/:id
 Returns current status of the email attempt.
 
@@ -103,11 +101,10 @@ Example:
 GET /status/demo-email-2025
 
 Response:
-```
 {
   "status": "SENT"
 }
-```
+
 Possible status values:
 
 "PENDING"
@@ -121,12 +118,12 @@ Possible status values:
 "FAILED"
 
 ⚙️ Run Locally
-```
+
 git clone https://github.com/yourusername/EmailSendingService.git
 cd EmailSendingService
 npm install
 node src/index.js
-```
+
 Test in Postman:
 
 POST: http://localhost:10000/send-email
@@ -155,4 +152,3 @@ Circuit breaker opens after 3 failures, recovers after 10s.
 
 
 
-```
