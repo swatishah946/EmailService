@@ -4,13 +4,14 @@
   "description": "email sending service.",
   "main": "index.js",
   "type": "module",
- "scripts": {
-  "start": "node src/index.js",
-  "test": "jest"
-},
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest"
+  },
   "author": "Swati Shah",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^5.1.0"
   },
   "devDependencies": {

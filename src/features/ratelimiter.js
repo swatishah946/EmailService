@@ -6,7 +6,7 @@ parameters-
  * return {boolean} - True if allowed, false if rate limit exceeded
 */
 
-async function LimitCheck(limit=7,interval=60000) {
+export async function LimitCheck(limit=7,interval=60000) {
     const currenttime=Date.now();
     let windowstart=currenttime-interval;
 
