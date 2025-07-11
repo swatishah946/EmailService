@@ -36,7 +36,7 @@ An intelligent and fault-tolerant email sending service built with Node.js (ES M
 
 ## 📁 Folder Structure
 
-EmailSendingService/
+```EmailSendingService/
 │
 ├── src/
 │ ├── index.js # Express server
@@ -53,7 +53,7 @@ EmailSendingService/
 ├── tests/ # Manual test files using assert
 ├── package.json
 └── README.md
-
+```
 ---
 
 ## 🔁 API Endpoints
@@ -88,7 +88,7 @@ Sends an email using mock providers with retry, fallback, and queue logic.
         }
 
 📤 Sample Response
-```json
+
 {
   "status": "QUEUED",
   "message": "Email job accepted and will be processed shortly.",
@@ -100,7 +100,7 @@ Returns current status of the email attempt.
 
 Example:
 GET /status/demo-email-2025
-```json
+
 Response:
 {
   "status": "SENT"
