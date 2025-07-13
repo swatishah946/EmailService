@@ -5,7 +5,8 @@ import { enqueueEmailJob } from './emailservice.js';
 import {EmailService} from './emailservice.js';
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
+
 
 app.use(cors());
 app.use(express.json());
@@ -45,6 +46,7 @@ app.get('/status/:id', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 EmailService API running on http://localhost:${PORT}`);
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });
